@@ -208,6 +208,7 @@ body::before {
 }
 
 .card-description {
+  --description-lines: 2;
   font-size: 0.95rem;
   color: #94a3b8;
   line-height: 1.6;
@@ -216,9 +217,13 @@ body::before {
 
 .card-description.is-collapsed {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: var(--description-lines);
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.card-description-roomy {
+  --description-lines: 3;
 }
 
 .read-more-toggle {
