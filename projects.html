@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Jacqueline's Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./projects.css?v=20260423-projects" />
+  <link rel="stylesheet" href="./projects.css?v=20260423b-projects" />
 </head>
 <body>
   <div class="projects-page">
@@ -31,9 +31,12 @@
             <h2>Khido</h2>
             <span class="card-badge">Live</span>
           </div>
-          <p class="card-description">
-            Khido is an AI-powered emotional wellness companion designed to give users a calm, supportive space through conversational AI, soothing audio, and interactive experiences. Built as a mobile-first product, it combines an empathetic chatbot with lightweight games and nature soundscapes to help users regulate stress and build daily mental wellness habits.
+          <p class="card-description is-collapsed" id="project-description-khido">
+            AI wellness companion for iOS that gives users a calm, supportive space through conversational AI, soothing audio, and interactive experiences. Built mobile-first, it blends an empathetic chatbot with lightweight games and nature soundscapes to help people regulate stress and build daily mental wellness habits.
           </p>
+          <button class="read-more-toggle" type="button" aria-expanded="false" aria-controls="project-description-khido">
+            Read more
+          </button>
           <div class="card-tags">
             <span>iOS App</span>
             <span>Conversational AI</span>
@@ -66,9 +69,12 @@
             <h2>GitHub: jackiesafari</h2>
             <span class="card-badge">Open Source</span>
           </div>
-          <p class="card-description">
-            End-to-end experiments, prototypes, and implementation work across product ideas. Speed without sacrificing code clarity.
+          <p class="card-description is-collapsed" id="project-description-github">
+            Code portfolio featuring end-to-end builds, rapid prototypes, and implementation experiments across product ideas. The work spans JavaScript and Python with a focus on shipping quickly without losing code clarity.
           </p>
+          <button class="read-more-toggle" type="button" aria-expanded="false" aria-controls="project-description-github">
+            Read more
+          </button>
           <div class="card-tags">
             <span>JavaScript</span>
             <span>Python</span>
@@ -94,9 +100,12 @@
             <h2>PostFuel</h2>
             <span class="card-badge">Live</span>
           </div>
-          <p class="card-description">
-            PostFuel is a Next.js app for turning raw topics, notes, documentation, changelogs, and code snippets into structured, reviewable content drafts. It helps teams generate blog posts, summaries, technical walkthroughs, and social cutdowns while keeping supporting evidence attached so editors and contributors can verify what the system produced before anything is published.
+          <p class="card-description is-collapsed" id="project-description-postfuel">
+            Next.js content drafting tool that turns raw topics, notes, docs, changelogs, and code snippets into structured, reviewable drafts. It helps teams create blog posts, summaries, technical walkthroughs, and social cutdowns while keeping supporting evidence attached before anything is published.
           </p>
+          <button class="read-more-toggle" type="button" aria-expanded="false" aria-controls="project-description-postfuel">
+            Read more
+          </button>
           <div class="card-tags">
             <span>Next.js</span>
             <span>AI Drafting</span>
@@ -111,5 +120,6 @@
       </article>
     </div>
   </div>
+  <script src="./projects.js?v=20260423-projects" defer></script>
 </body>
 </html>
