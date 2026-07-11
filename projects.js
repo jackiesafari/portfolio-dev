@@ -1,5 +1,3 @@
-const descriptionToggles = document.querySelectorAll(".read-more-toggle");
-
 function syncToggleVisibility(toggle) {
   const descriptionId = toggle.getAttribute("aria-controls");
   const description = document.getElementById(descriptionId);
@@ -9,8 +7,8 @@ function syncToggleVisibility(toggle) {
     return;
   }
 
-  const wasExpanded = toggle.getAttribute("aria-expanded") === "true";
-  if (wasExpanded) {
+  const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+  if (isExpanded) {
     toggle.hidden = false;
     return;
   }
@@ -36,11 +34,23 @@ function handleToggleClick(toggle) {
   description.classList.toggle("is-collapsed", !nextExpandedState);
 }
 
-descriptionToggles.forEach((toggle) => {
-  syncToggleVisibility(toggle);
-  toggle.addEventListener("click", () => handleToggleClick(toggle));
-});
+function initializeDescriptionToggles() {
+  const descriptionToggles = document.querySelectorAll(".read-more-toggle");
+
+  descriptionToggles.forEach((toggle) => {
+    syncToggleVisibility(toggle);
+    toggle.addEventListener("click", () => handleToggleClick(toggle));
+  });
+}
 
 window.addEventListener("resize", () => {
+  const descriptionToggles = document.querySelectorAll(".read-more-toggle");
+
   descriptionToggles.forEach((toggle) => syncToggleVisibility(toggle));
 });
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeDescriptionToggles);
+} else {
+  initializeDescriptionToggles();
+}
